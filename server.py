@@ -1,26 +1,32 @@
+import sys
+sys.path.append("..")
+
+from data import tables_data
+from db import create_tables
 from flask import Flask, render_template, request, redirect, url_for
 from flask import send_file
 from flask import send_from_directory
 import os
-import shutil
-import sys
-
-sys.path.append("..")
 
 from util import utils
-isLoggedIn = False
-isAuthRequired = True # ===> pick this from config
+from log import logger
 
+ISLOGGEDIN = False
+ISAUTHREQUIRED = True # ===> pick this from config
+logObj = logger.getLogger()
 app = Flask(__name__)
 
 @app.route('/server',methods=['GET','POST'])  # writing it for both get and post
 def serverMain():
-	global isLoggedIn
-	global isAuthRequired
+	userIp = request.remote_addr
+	uUid = utils.getuUid()
+	logObj.debug("accessing /server by :" + userIp + uUid)
+	global ISLOGGEDIN
+	global ISAUTHREQUIRED
 	#first check fro config whether auth is enabled or not 
 	#if login is required and 
 	#render login page if not logged in
-	if isLoggedIn == False and isAuthRequired == True:
+	if ISLOGGEDIN == False and ISAUTHREQUIRED == True:
 		return render_template("temp.html")
 	else:
 		#TODO: call the rbac server next layer 
@@ -29,17 +35,18 @@ def serverMain():
 
 @app.route('/login',methods=['POST'])
 def loginServer():
-	global isLoggedIn
-	global isAuthRequired
+	userIp = request.remote_addr
+	uUid = utils.getuUid()
+	logObj.debug("accessing /login by :" + userIp + uUid)
+	global ISLOGGEDIN
+	global ISAUTHREQUIRED
 	userName = ""
 	passWord = ""
 	authSuccess = False
-	uUid = utils.getuUid()
-	print("UUid is {}".format(uUid))
 	#if already logged in or if auth is not required we need to proceed to next page 
-	if isLoggedIn == False and isAuthRequired == True:
-		userName = str(request.form.get('Username'))
-		passWord = str(request.form.get('Password'))
+	if ISLOGGEDIN == False and ISAUTHREQUIRED == True:
+		userName = str(request.form.get('username'))
+		passWord = str(request.form.get('password'))
 		print(userName)
 		print(passWord)
 		#TODO: call post sql query with given username and password
@@ -49,8 +56,11 @@ def loginServer():
 		if authSuccess == True:
 			#TODO: call the rbac server next layer i.e resource page 
 			print("Successful!")
+			return {'username': userName, 'password': passWord}
 
 portNum = 8001  #TODO: get it from config
+
 print("here ")
 if __name__ == '__main__':
+	create_tables.create_table(tables_data.TABLES)
 	app.run(host='0.0.0.0', port = portNum, debug=True, threaded=True)

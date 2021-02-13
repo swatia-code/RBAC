@@ -1,0 +1,62 @@
+INFO: * Restarting with stat
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+DEBUG:accessing /server by :127.0.0.12021-02-1400-02-26-848349
+INFO:127.0.0.1 - - [14/Feb/2021 00:02:26] "[37mGET /server HTTP/1.1[0m" 200 -
+DEBUG:accessing /login by :127.0.0.12021-02-1400-02-34-541936
+INFO:127.0.0.1 - - [14/Feb/2021 00:02:34] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO: * Detected change in 'C:\\Users\\SWATI ARORA\\RBAC\\log\\logger.py', reloading
+INFO: * Restarting with stat
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+INFO: * Restarting with stat
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+DEBUG:accessing /server by :127.0.0.12021-02-1400-05-15-444029
+INFO:127.0.0.1 - - [14/Feb/2021 00:05:15] "[37mGET /server HTTP/1.1[0m" 200 -
+DEBUG:accessing /login by :127.0.0.12021-02-1400-05-22-621400
+INFO:127.0.0.1 - - [14/Feb/2021 00:05:22] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO: * Restarting with stat
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+DEBUG:accessing /server by :127.0.0.12021-02-1403-20-45-468003
+INFO:127.0.0.1 - - [14/Feb/2021 03:20:45] "[37mGET /server HTTP/1.1[0m" 200 -
+DEBUG:accessing /login by :127.0.0.12021-02-1403-20-55-271237
+INFO:127.0.0.1 - - [14/Feb/2021 03:20:55] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO: * Detected change in 'C:\\Users\\SWATI ARORA\\RBAC\\db\\db_conn.py', reloading
+INFO: * Restarting with stat
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+INFO: * Restarting with stat
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+DEBUG:accessing /server by :127.0.0.12021-02-1403-22-21-813622
+INFO:127.0.0.1 - - [14/Feb/2021 03:22:21] "[37mGET /server HTTP/1.1[0m" 200 -
+DEBUG:accessing /login by :127.0.0.12021-02-1403-22-29-218075
+INFO:127.0.0.1 - - [14/Feb/2021 03:22:29] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO: * Detected change in 'C:\\Users\\SWATI ARORA\\RBAC\\db\\db_conn.py', reloading
+INFO: * Restarting with stat
+DEBUG:connecting to MySQL database...
+INFO:connection established
+8.0.1-dmr-log
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+DEBUG:connecting to MySQL database...
+INFO:connection established
+8.0.1-dmr-log
+INFO: * Restarting with stat
+DEBUG:connecting to MySQL database...
+INFO:connection established
+8.0.1-dmr-log
+WARNING: * Debugger is active!
+INFO: * Debugger PIN: 280-834-400
+INFO: * Running on http://0.0.0.0:8001/ (Press CTRL+C to quit)
+INFO: * Detected change in 'C:\\Users\\SWATI ARORA\\RBAC\\db\\create_tables.py', reloading
+INFO: * Restarting with stat

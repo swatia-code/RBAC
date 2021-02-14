@@ -2,7 +2,7 @@ import sys
 sys.path.append("..")
 
 from data import tables_data
-from db import create_tables
+from db import db_utils
 from flask import Flask, render_template, request, redirect, url_for
 from flask import send_file
 from flask import send_from_directory
@@ -62,5 +62,6 @@ portNum = 8001  #TODO: get it from config
 
 print("here ")
 if __name__ == '__main__':
-	create_tables.create_table(tables_data.TABLES)
+	db_utils.create_table(tables_data.TABLES)
 	app.run(host='0.0.0.0', port = portNum, debug=True, threaded=True)
+

@@ -1,8 +1,4 @@
-from datetime import datetime
+import time
 
 def getuUid():
-	currentTime = str(datetime.now())
-	uUid  = currentTime.replace(" ",'')
-	uUid  = uUid.replace(":",'-')
-	uUid  = uUid.replace(".",'-')
-	return uUid
+	return int(time.time())

@@ -1,26 +1,20 @@
-import mysql.connector
-from db.db_conn import get_db_session
+from db import db_conn
+from log.logger import getLogger
 from data import tables_data
-from log import logger
 
-logObj = logger.getLogger()
-conn = get_db_session()
+logger = getLogger()
 
-def create_table(table_dict: dict):
+def create_table():
     for table_name in tables_data.TABLES:
         table_description = tables_data.TABLES[table_name]
-        try:
-            logObj.debug("Creating table {}: ".format(table_name), end='')
-            conn.query(table_description)
-        except mysql.connector.Error as err:
-            if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
-                logObj.error("already exists.")
-            else:
-                logObj.error(err.msg)
-        else:
-            logObj.debug("OK")
+        logger.debug("Creating table {}: ".format(table_name))
+        result,code = db_conn.execute_query(table_description)
+        if result is None and code != 200:
+            logger.error("Failed creating database " + str(code))
+
 
 def get_emp_data():
-    query = `SELECT * FROM employees`
-    return conn.query(query)
-    
+	get_emp_query = ("SELECT * FROM `employees`")
+	result, code = db_conn.execute_query(get_emp_query)
+	print(result)
+	print(code)
